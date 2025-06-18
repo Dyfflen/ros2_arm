@@ -1,0 +1,160 @@
+<?xml version="1.0" ?>
+<robot name="RobotArm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="base_link">
+      <inertial>
+        <origin xyz="0.0 3.0473805790115944e-17 0.06710526315789474" rpy="0 0 0"/>
+        <mass value="7.028528164243764"/>
+        <inertia ixx="0.01717" iyy="0.01717" izz="0.00701" ixy="0.0" iyz="0.0" ixz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/visual/base_link.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/collision/base_link.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Componente4_1">
+      <inertial>
+        <origin xyz="1.0134334491220965e-17 -0.026755885129270393 0.07324411487072963" rpy="0 0 0"/>
+        <mass value="7.044896154850844"/>
+        <inertia ixx="0.018585" iyy="0.012111" izz="0.012111" ixy="0.0" iyz="0.005089" ixz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 -0.0 -0.15" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/visual/Componente4_1.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        </visual>
+      <collision>
+        <origin xyz="0.0 -0.0 -0.15" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/collision/Componente4_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Componente5_1">
+      <inertial>
+        <origin xyz="0.0 -0.08738047991046766 0.11828872124986534" rpy="0 0 0"/>
+        <mass value="14.93657690066839"/>
+        <inertia ixx="0.162427" iyy="0.153287" izz="0.021088" ixy="0.0" iyz="0.022342" ixz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.1 -0.25" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/visual/Componente5_1.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        </visual>
+      <collision>
+        <origin xyz="0.0 0.1 -0.25" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/collision/Componente5_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Componente6_1">
+      <inertial>
+        <origin xyz="0.0 0.026755885129270546 0.07324411487072946" rpy="0 0 0"/>
+        <mass value="7.044896154850833"/>
+        <inertia ixx="0.018585" iyy="0.012111" izz="0.012111" ixy="0.0" iyz="-0.005089" ixz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.2 -0.55" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/visual/Componente6_1.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        </visual>
+      <collision>
+        <origin xyz="0.0 0.2 -0.55" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/collision/Componente6_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Componente7_1">
+      <inertial>
+        <origin xyz="2.673220995321651e-07 0.08918779058748391 0.1494478643113606" rpy="0 0 0"/>
+        <mass value="17.433294627889037"/>
+        <inertia ixx="0.266514" iyy="0.257034" izz="0.023108" ixy="0.0" iyz="-0.028215" ixz="-1e-06"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.1 -0.65" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/visual/Componente7_1.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        </visual>
+      <collision>
+        <origin xyz="0.0 0.1 -0.65" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/collision/Componente7_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Componente8_1">
+      <inertial>
+        <origin xyz="-3.0163950392876806e-05 -1.1628250065204183e-15 0.026412072740170656" rpy="0 0 0"/>
+        <mass value="0.03594944014624574"/>
+        <inertia ixx="1e-05" iyy="1.7e-05" izz="8e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.0 0.0 -1.05" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/visual/Componente8_1.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        </visual>
+      <collision>
+        <origin xyz="0.0 0.0 -1.05" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://moveit_resources_panda_description/meshes/collision/Componente8_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="limb1_to_base_link" type="continuous">
+      <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="Componente4_1"/>
+      <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="limb2_to_limb1" type="revolute">
+      <origin xyz="0.0 -0.1 0.1" rpy="0 0 0"/>
+      <parent link="Componente4_1"/>
+      <child link="Componente5_1"/>
+      <axis xyz="0.0 -1.0 0.0"/>
+      <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="limb3_to_limb2" type="continuous">
+      <origin xyz="0.0 -0.1 0.3" rpy="0 0 0"/>
+      <parent link="Componente5_1"/>
+      <child link="Componente6_1"/>
+      <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="limb4_to_limb3" type="revolute">
+      <origin xyz="0.0 0.1 0.1" rpy="0 0 0"/>
+      <parent link="Componente6_1"/>
+      <child link="Componente7_1"/>
+      <axis xyz="0.0 1.0 0.0"/>
+      <limit upper="2.792527" lower="-2.792527" effort="100" velocity="100"/>
+    </joint>
+
+    <joint name="limb5_to_limb4" type="continuous">
+      <origin xyz="0.0 0.1 0.4" rpy="0 0 0"/>
+      <parent link="Componente7_1"/>
+      <child link="Componente8_1"/>
+      <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+</robot>
