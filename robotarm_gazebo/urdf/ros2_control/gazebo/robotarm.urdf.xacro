@@ -1,0 +1,305 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="robotarm">
+    <xacro:include filename="$(find robotarm_gazebo)/urdf/ros2_control/gazebo/robotarm_gazebo.xacro"/>
+    <xacro:include filename="$(find robotarm_gazebo)/urdf/ros2_control/gazebo/robotarm_ros2_control.xacro"/>
+
+	<link name="world"/>
+
+	<xacro:property name="effort" value="56.0"/>
+	<xacro:property name="velocity" value="2.792527"/>
+
+	<link name="base_link">
+		<inertial>
+			<origin xyz="2.8369044402759046e-17 2.8369044402759046e-17 0.028689822098966686" rpy="0 0 0"/>
+			<mass value="8.5332269363081"/>
+			<inertia ixx="1.229894" iyy="1.229894" izz="2.379382" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/base_link.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy = " 0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/base_link.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy = " 0 0 0"/>
+		</collision>
+	</link>
+
+	<link name="link1">
+		<inertial>
+			<origin xyz="1.0134334491220965e-17 -0.026755885129270393 0.07324411487072963" rpy="0 0 0"/>
+			<mass value="7.044896154850844"/>
+			<inertia ixx="0.018585" iyy="0.012111" izz="0.012111" ixy="0.0" iyz="0.005089" ixz="0.0"/>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0.0 -0.0 -0.15" rpy = " 0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link1.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0.0 -0.0 -0.15" rpy = " 0 0 0"/>
+		</collision>
+	</link>
+	
+	<link name="link2">
+		<inertial>
+			<origin xyz="0.0 -0.08738047991046766 0.11828872124986534" rpy="0 0 0"/>
+			<mass value="14.93657690066839"/>
+			<inertia ixx="0.162427" iyy="0.153287" izz="0.021088" ixy="-0.0" iyz="0.022342" ixz="-0.0"/>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0.0 0.1 -0.25" rpy = " 0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link2.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0.0 0.1 -0.25" rpy = " 0 0 0"/>
+		</collision>
+	</link>
+
+	<link name="link3">
+		<inertial>
+			<origin xyz="0.0 0.026755885129270546 0.07324411487072946" rpy="0 0 0"/>
+			<mass value="7.044896154850833"/>
+			<inertia ixx="0.018585" iyy="0.012111" izz="0.012111" ixy="0.0" iyz="-0.005089" ixz="-0.0"/>
+		</inertial>
+		<visual>
+		  	<geometry>
+		   		<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link3.dae" scale="0.001 0.001 0.001"/>
+		  	</geometry>
+			<origin xyz = "0.0 0.2 -0.55" rpy = " 0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link3.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz = "0.0 0.2 -0.55" rpy = " 0 0 0"/>
+		</collision>
+	</link>
+
+	<link name="link4">
+		<inertial>
+			<origin xyz="0.0 0.08916499945086516 0.14891129438560768" rpy="0 0 0"/>
+			<mass value="17.396624154474903"/>
+			<inertia ixx="0.264127" iyy="0.254651" izz="0.023101" ixy="0.0" iyz="-0.028114" ixz="0.0"/>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz = "0.0 0.1 -0.65" rpy = " 0 0 0"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/link4.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz = "0.0 0.1 -0.65" rpy = " 0 0 0"/>
+		</collision>
+	</link>
+
+	<link name="gripper_base">
+		<inertial>
+			<origin xyz="-7.495972193462562e-15 -4.219133002140135e-16 0.0028490433815695493" rpy="0 0 0"/>
+			<mass value="0.0008740280216080978"/>
+			<inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+		</inertial>
+		<visual>
+		  	<geometry>
+				<mesh filename="file://$(find robotarm_description)/meshes/robotarm/gripper_base.dae" scale="0.001 0.001 0.001"/>
+		  	</geometry>
+		  	<origin xyz = "0.0 0.0 -1.05" rpy = "0 0 0"/>
+		</visual>
+		<collision>
+		   	<geometry>	
+		   		<mesh filename="file://$(find robotarm_description)/meshes/robotarm/gripper_base.stl" scale="0.001 0.001 0.001"/>
+		  	</geometry>
+		  	<origin xyz = "0.0 0.0 -1.05" rpy = "0 0 0"/>
+		</collision>
+	</link>
+	
+	<link name="gripper_left">
+		<inertial>
+			<origin xyz="-0.0017647655885889828 -0.005000000000001165 0.02562408771329583" rpy="0 0 0"/>
+			<mass value="0.01785759578427443"/>
+			<inertia ixx="0.000005" iyy="0.000005" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+		</inertial>
+		<visual>
+		  	<geometry>
+		   		<mesh filename="file://$(find robotarm_description)/meshes/robotarm/gripper_left.dae" scale="0.001 0.001 0.001"/>
+		  	</geometry>
+		<origin xyz = "0.013 -0.0055 -1.053" rpy = " 0 0 0"/>
+		</visual>
+		<collision>
+		  	<geometry>
+		   		<mesh filename="file://$(find robotarm_description)/meshes/robotarm/gripper_left.stl" scale="0.001 0.001 0.001"/>
+		  	</geometry>
+			<origin xyz = "0.013 -0.0055 -1.053" rpy = " 0 0 0"/>
+		</collision>
+	</link>
+	
+	<link name="gripper_right">
+		<inertial>
+			<origin xyz="0.0016031563040652536 -0.005000000000001164 0.025591343998014215" rpy="0 0 0"/>
+			<mass value="0.017802263018206158"/>
+			<inertia ixx="0.000005" iyy="0.000005" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+		</inertial>
+		<visual>
+			<geometry>
+		   		<mesh filename="file://$(find robotarm_description)/meshes/robotarm/gripper_right.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz = "-0.013 -0.0055 -1.053" rpy = " 0 0 0"/>
+		</visual>
+		<collision>
+		  	<geometry>
+		   		<mesh filename="file://$(find robotarm_description)/meshes/robotarm/gripper_right.stl" scale="0.001 0.001 0.001"/>
+		  	</geometry>
+			<origin xyz = "-0.013 -0.0055 -1.053" rpy = " 0 0 0"/>
+		</collision>
+	</link>
+
+    <gazebo reference="base_link">
+        <visual>
+            <material>
+                <ambient>0.5 0.5 0.5 1</ambient>
+                <diffuse>0.5 0.5 0.5 1</diffuse>
+                <specular>0.5 0.5 0.5 1</specular>
+            </material>
+        </visual>
+    </gazebo>
+    
+    <gazebo reference="link1">
+        <visual>
+            <material>
+                <ambient>0.5 0.5 0.5 1</ambient>
+                <diffuse>0.5 0.5 0.5 1</diffuse>
+                <specular>0.5 0.5 0.5 1</specular>
+            </material>
+        </visual>
+    </gazebo>
+    
+    <gazebo reference="link2">
+        <visual>
+            <material>
+                <ambient>1 1 1 1</ambient>
+                <diffuse>1 1 1 1</diffuse>
+                <specular>1 1 1 1</specular>
+            </material>
+        </visual>
+    </gazebo>
+
+    <gazebo reference="link3">
+        <visual>
+            <material>
+                <ambient>1 1 1 1</ambient>
+                <diffuse>1 1 1 1</diffuse>
+                <specular>1 1 1 1</specular>
+            </material>
+        </visual>
+    </gazebo>
+
+    <gazebo reference="link4">
+        <visual>
+            <material>
+                <ambient>1 1 1 1</ambient>
+                <diffuse>1 1 1 1</diffuse>
+                <specular>1 1 1 1</specular>
+            </material>
+        </visual>
+    </gazebo>
+
+    <gazebo reference="gripper_base">
+        <visual>
+            <material>
+                <ambient>1 1 1 1</ambient>
+                <diffuse>1 1 1 1</diffuse>
+                <specular>1 1 1 1</specular>
+            </material>
+        </visual>
+    </gazebo>
+    
+	<gazebo reference="base_link_to_link1">
+		<pid_gains p="1000.0" i="10.0" d="50.0"/>
+	</gazebo>
+
+	<joint name="virtual_joint" type="fixed">
+		<parent link="world"/>
+		<child link="base_link"/>
+		<origin xyz= "0 0 0" rpy = "0 0 0"/>  
+	</joint>
+	
+    <joint name="base_link_to_link1" type="revolute">
+		<axis xyz="0.0 0.0 1.0"/>
+		<limit effort = "${effort}" lower = "-2.879793" upper = "2.879793" velocity = "${velocity}" />
+        <parent link="base_link"/>
+            <child link="link1"/>
+            <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
+		<dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+	<joint name="link1_to_link2" type="revolute">
+		<axis xyz="0 -1 0"/>
+		<limit effort = "${effort}" lower = "-2.879793" upper = "2.879793" velocity = "${velocity}" />
+		<parent link="link1"/>
+		<child link="link2"/>
+		<origin xyz= "0.0 -0.1 0.1" rpy = "0 0 0"/>  
+        <dynamics damping="0.0" friction="0.0"/>
+	</joint>
+
+	<joint name="link2_to_link3" type="revolute">
+		<axis xyz="0 0 1"/>
+		<limit effort = "${effort}" lower = "-2.879793" upper = "2.879793" velocity = "${velocity}" />
+		<parent link="link2"/>
+		<child link="link3"/>
+		<origin xyz= "0.0 -0.1 0.3" rpy = "0 0 0"/>  
+        <dynamics damping="0.0" friction="0.0"/>
+	</joint>
+
+	<joint name="link3_to_link4" type="revolute">
+		<axis xyz=" 0.0 1.0 0.0"/>
+		<limit effort = "${effort}" lower = "-2.879793" upper = "2.879793" velocity = "${velocity}" />
+		<parent link="link3"/>
+		<child link="link4"/>
+		<origin xyz= "0.0 0.1 0.1" rpy = "0 0 0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+	</joint>
+
+	<joint name="link4_to_gripper_base" type="revolute">
+		<axis xyz=" 0 0 1"/>
+		<limit effort = "${effort}" lower = "-2.879793" upper = "2.879793" velocity = "${velocity}" />
+		<parent link="link4"/>
+		<child link="gripper_base"/>
+		<origin xyz= "0.0 0.1 0.4" rpy = "0 0 0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+	</joint>
+
+	<joint name="gripper_controller" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort = "${effort}" lower = "-0.15" upper = "0.7" velocity = "${velocity}" />
+		<parent link="gripper_base"/>
+		<child link="gripper_left"/>
+		<origin xyz= "-0.013 0.0055 0.003" rpy = "0 0 0"/> 
+        <dynamics damping="0.0" friction="0.0"/>
+	</joint>
+	
+	<joint name="gripper_base_to_gripper_right" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort = "${effort}" lower = "-0.15" upper = "0.7" velocity = "${velocity}" />
+		<parent link="gripper_base"/>
+		<child link="gripper_right"/>
+		<origin xyz= "0.013 0.0055 0.003" rpy = "0 0 0"/> 
+		<mimic joint="gripper_controller" multiplier="-1.0" offset="0" />
+        <dynamics damping="0.0" friction="0.0"/>
+	</joint>
+	
+</robot>
