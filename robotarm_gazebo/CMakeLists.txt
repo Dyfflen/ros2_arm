@@ -34,7 +34,7 @@ set(dependencies
 include_directories(include)
 
 install (
-  DIRECTORY config launch models scripts urdf worlds
+  DIRECTORY config launch scripts urdf worlds
   DESTINATION share/${PROJECT_NAME}
 )
 
