@@ -1,0 +1,43 @@
+# gz topic published by the JointState plugin
+- ros_topic_name: "joint_states"
+  gz_topic_name: "joint_states"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "ignition.msgs.Model"
+  direction: GZ_TO_ROS
+
+# gz topic subscribed by the JointPositionController plugin
+- ros_topic_name: "model/robotarm/joint/link1_to_link2/cmd_pos"
+  gz_topic_name: "model/robotarm/joint/link1_to_link2/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "model/robotarm/joint/link2_to_link3/cmd_pos"
+  gz_topic_name: "model/robotarm/joint/link2_to_link3/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "model/robotarm/joint/link3_to_link4/cmd_pos"
+  gz_topic_name: "model/robotarm/joint/link3_to_link4/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "model/robotarm/joint/link4_to_gripper_base/cmd_pos"
+  gz_topic_name: "model/robotarm/joint/link4_to_gripper_base/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "model/robotarm/joint/gripper_controller/cmd_pos"
+  gz_topic_name: "model/robotarm/joint/gripper_controller/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "model/robotarm/joint/gripper_base_to_gripper_right/cmd_pos"
+  gz_topic_name: "model/robotarm/joint/gripper_base_to_gripper_right/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
