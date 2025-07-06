@@ -1,4 +1,6 @@
 # ros2_arm
+![Robot Arm](https://github.com/Dyfflen/ros2_arm/blob/main/media/robot%20arm%20-%20gazebo%20&%20rviz.png?raw=true)
+
 ## Terminal 1:
 ```
 cd <your_ws>
