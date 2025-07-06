@@ -1,6 +1,10 @@
 # ros2_arm
 ![Robot Arm](https://github.com/Dyfflen/ros2_arm/blob/main/media/robot%20arm%20-%20gazebo%20&%20rviz.png?raw=true)
 
+## Dependencies:
+### [Ubuntu 22.04.5 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/jammy/)
+### [ROS 2 Iron](https://docs.ros.org/en/iron/Installation/Ubuntu-Install-Debs.html)
+
 ## Terminal 1:
 ```
 cd <your_ws>
